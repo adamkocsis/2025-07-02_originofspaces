@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+data/chronosphere/
+export/
+*.log
+tmp/
+
+
