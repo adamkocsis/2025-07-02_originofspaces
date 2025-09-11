@@ -8,6 +8,10 @@ library(icosa)
 library(divDyn)
 
 
+# Glossopteris
+# Lystrosaurus
+# Cynognathus
+# Mesosaurus
 
 # the bounds of the permian period
 data(stages)
@@ -47,9 +51,9 @@ permGloss <- gloss[which(gloss$early_interval%in%permian),]
 
 # present-day plotting of occurrenes
 plot(ne$geometry, col="gray", border=NA)
-points(permgloss[, c("lng", "lat")], pch=16, col="#dd2222bb")
+points(permGloss[, c("lng", "lat")], pch=16, col="#dd2222bb")
 
-hex<- hexagrid(deg=4, sf=TRUE)
+hex<- hexagrid(deg=10, sf=TRUE)
 
 # the modern cell
 permGloss$modCell <- locate(hex,permGloss[, c("lng", "lat")])
@@ -94,3 +98,13 @@ png("export/paleo_glossopteris.png", width=2200, height=1000, pointsize=20)
 	plot(hex, tPaleo, add=TRUE, border="gray80")
 	points(pCoords, pch=16, col="#dd2222bb")
 dev.off()
+
+
+
+
+# Genus - period combination compare
+# Distribution or range of occurrences in the recontstructed world
+# COmpared with present-day coordinates
+# Expectation: increase in the spread of occurrenec - tectonics are shuffling occurrences
+#
+#
