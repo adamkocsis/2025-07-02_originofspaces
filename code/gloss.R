@@ -1,4 +1,4 @@
-setwd("/mnt/sky/Dropbox/WorkSpace/2025-07-02_fossilsforthewin/")
+setwd("/mnt/sky/Dropbox/WorkSpace/2025-07-02_originofspaces/")
 
 # attach necessary stuff
 library(chronosphere)
