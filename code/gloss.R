@@ -10,6 +10,7 @@ library(rgplates)
 # the whole pbdb
 dir.create("data", showWarnings=FALSE)
 dir.create("data/chronosphere", showWarnings=FALSE)
+dir.create("export", showWarnings=FALSE)
 
 # load PBDB data
 pbdb <- chronosphere::fetch("pbdb", datadir="data/chronosphere/", ver="20260419")
