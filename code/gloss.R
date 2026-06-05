@@ -2,7 +2,6 @@ setwd("/mnt/sky/Dropbox/WorkSpace/2025-07-02_originofspaces/")
 
 # attach necessary stuff
 library(chronosphere)
-library(divDyn)
 library(rgplates)
 
 # the bounds of the permian period
@@ -58,10 +57,6 @@ focal <- focal[which(focal$early_interval%in%interest),]
 focal$group <- "Glossopteris"
 
 ################################################################################
-# the bounds of the interval where this thing is? Early Permian to Anisian
-data(stages)
-bounds<- range(stages[43:54,  c("top", "bottom")])
-mid <- mean(bounds)
 
 # Natural Earth Polygons
 ne <- chronosphere::fetch("NaturalEarth", datadir="data/chronosphere/")
@@ -85,22 +80,9 @@ dev.off()
 ################################################################################
 # Paleo model
 ################################################################################
-
-# model
-MERDITH2021 <- chronosphere::fetch("GPlates",ser="MERDITH2021",  datadir="data/chronosphere/")
-
-# the continents
-conts <- reconstruct("continents", age=mid, model=MERDITH2021)
-coords <- reconstruct(focal[, c("lng", "lat")], age=mid, model=MERDITH2021)
-
-png(paste0("export/glossopteris_rec.png"), width=2200, height=1000, pointsize=20)
-	plot(conts$geometry, col="gray", border=NA)
-	points(coords, pch=21, col="black", bg="#dd222266")
-dev.off()
-
-
-################################################################################
+# target age
 mid <- 270
+
 # Scotese model
 PALEOMAP <- chronosphere::fetch("paleomap",ser="model",  datadir="data/chronosphere/")
 
